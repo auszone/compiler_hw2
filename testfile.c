@@ -16,8 +16,8 @@ int main(){
 
   // statements
   a = 10/2;
- // c = (b+3)*4-5;
-  //b = sub(10,8);
+  c = (b+3)*4-5;
+  b = sub(10,8);
 
   return a;
 

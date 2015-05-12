@@ -63,15 +63,18 @@ term: term '*' factor{
 }
 | factor {
     printf("factor -> term\n");
+}
+| FUNCTION NUM ',' NUM ')'{
+    printf("FUNCTION '('  NUM ',' NUM ')' -> term\n");   
 };
 factor: '(' term ')' {
     printf("'(' term ')' -> factor\n");
 }
-| '+' factor {
-    printf("'+' factor -> factor\n");
+|factor '+' factor {
+    printf("factor '+' factor -> factor\n");
 }
-| '-' factor {
-    printf("'-' factor -> factor\n");
+|factor '-' factor {
+    printf("factor '-' factor -> factor\n");
 }
 | NUM {
     printf("NUM -> factor\n");
@@ -80,7 +83,7 @@ factor: '(' term ')' {
     printf("VARIABLE -> factor\n");   
 };
 return: RETURN term ';' {
-    printf("'return' term -> return\n");
+    printf("RETURN term -> return\n");
 };
 sub_fun: TYPE FUNCTION TYPE VARIABLE ',' TYPE VARIABLE ')' '{' content '}' {
     printf("TYPE '(' TYPE VARIABLE ',' TYPE VARIABLE ')' '{' content '}' -> sub_fun\n");

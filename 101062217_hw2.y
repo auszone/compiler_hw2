@@ -24,10 +24,10 @@ program: fun_dec main_fun sub_fun {
 };
 
 fun_dec: TYPE FUNCTION TYPE VARIABLE',' TYPE VARIABLE')'';'{
-    printf("TYPE FUNCTION '(' TYPE VARIABLE ',' TYPE VARIABLE ')' ';' -> fun_dec\n");
+    printf("TYPE FUNCTION TYPE VARIABLE ',' TYPE VARIABLE ')' ';' -> fun_dec\n");
 };
 main_fun: TYPE FUNCTION  ')' '{' content '}' {
-    printf("TYPE FUNCTION '(' ')' '{' content '}' -> main_fun\n");
+    printf("TYPE FUNCTION ')' '{' content '}' -> main_fun\n");
 };
 content: variable_list statement_list return {
     printf("variable_list statement_list return -> content\n");
@@ -65,7 +65,7 @@ term: term '*' factor{
     printf("factor -> term\n");
 }
 | FUNCTION NUM ',' NUM ')'{
-    printf("FUNCTION '('  NUM ',' NUM ')' -> term\n");   
+    printf("FUNCTION NUM ',' NUM ')' -> term\n");   
 };
 factor: '(' term ')' {
     printf("'(' term ')' -> factor\n");
@@ -86,7 +86,7 @@ return: RETURN term ';' {
     printf("RETURN term -> return\n");
 };
 sub_fun: TYPE FUNCTION TYPE VARIABLE ',' TYPE VARIABLE ')' '{' content '}' {
-    printf("TYPE '(' TYPE VARIABLE ',' TYPE VARIABLE ')' '{' content '}' -> sub_fun\n");
+    printf("TYPE FUNCTION TYPE VARIABLE ',' TYPE VARIABLE ')' '{' content '}' -> sub_fun\n");
 };
 %%
 int yyerror(char *s)

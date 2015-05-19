@@ -476,13 +476,13 @@ break;
 case 2:
 #line 26 "101062217_hw2.y"
 	{
-    printf("TYPE FUNCTION '(' TYPE VARIABLE ',' TYPE VARIABLE ')' ';' -> fun_dec\n");
+    printf("TYPE FUNCTION TYPE VARIABLE ',' TYPE VARIABLE ')' ';' -> fun_dec\n");
 }
 break;
 case 3:
 #line 29 "101062217_hw2.y"
 	{
-    printf("TYPE FUNCTION '(' ')' '{' content '}' -> main_fun\n");
+    printf("TYPE FUNCTION ')' '{' content '}' -> main_fun\n");
 }
 break;
 case 4:
@@ -554,7 +554,7 @@ break;
 case 17:
 #line 67 "101062217_hw2.y"
 	{
-    printf("FUNCTION '('  NUM ',' NUM ')' -> term\n");   
+    printf("FUNCTION NUM ',' NUM ')' -> term\n");   
 }
 break;
 case 18:
@@ -596,7 +596,7 @@ break;
 case 24:
 #line 88 "101062217_hw2.y"
 	{
-    printf("TYPE '(' TYPE VARIABLE ',' TYPE VARIABLE ')' '{' content '}' -> sub_fun\n");
+    printf("TYPE FUNCTION TYPE VARIABLE ',' TYPE VARIABLE ')' '{' content '}' -> sub_fun\n");
 }
 break;
 #line 601 "y.tab.c"
